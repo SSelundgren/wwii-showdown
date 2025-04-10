@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WWII Showdown Trivia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      color: white;
+      padding: 2rem;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .slide {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background-color: #2d2d44;
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+    .question {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .points {
+      color: #ffd700;
+      font-weight: bold;
+    }
+    .scoreboard {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem 0;
+    }
+    .team {
+      background: #333355;
+      padding: 1rem;
+      border-radius: 1rem;
+      flex: 1;
+      margin: 0 1rem;
+      text-align: center;
+    }
+    .team input {
+      width: 60px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>WWII Showdown Trivia</h1>
+  <h2>Team Trivia Battle</h2>
+
+  <div class="scoreboard">
+    <div class="team">
+      <h3>Team 1</h3>
+      <input type="number" id="team1" value="0">
+    </div>
+    <div class="team">
+      <h3>Team 2</h3>
+      <input type="number" id="team2" value="0">
+    </div>
+    <div class="team">
+      <h3>Team 3</h3>
+      <input type="number" id="team3" value="0">
+    </div>
+  </div>
+
+  <div class="slide">
+    <h2>Round 1: Easy (5 Points)</h2>
+    <div class="question">1. What was the name of the agreement that punished Germany after WWI? <span class="points">[5 pts]</span></div>
+    <div class="question">2. Who was the leader of Nazi Germany? <span class="points">[5 pts]</span></div>
+    <div class="question">3. What does the term “Blitzkrieg” mean? <span class="points">[5 pts]</span></div>
+    <div class="question">4. What happened on December 7, 1941? <span class="points">[5 pts]</span></div>
+    <div class="question">5. What group of Americans were forced into internment camps during WWII? <span class="points">[5 pts]</span></div>
+  </div>
+
+  <div class="slide">
+    <h2>Round 2: Medium (10 Points)</h2>
+    <div class="question">6. What event started WWII in Europe? <span class="points">[10 pts]</span></div>
+    <div class="question">7. What was the Battle of Britain? <span class="points">[10 pts]</span></div>
+    <div class="question">8. Why couldn’t Hitler successfully invade the Soviet Union? <span class="points">[10 pts]</span></div>
+    <div class="question">9. What was D-Day and when did it happen? <span class="points">[10 pts]</span></div>
+    <div class="question">10. Which two Japanese cities were hit with atomic bombs? <span class="points">[10 pts]</span></div>
+  </div>
+
+  <div class="slide">
+    <h2>Round 3: Hard (15 Points)</h2>
+    <div class="question">11. Why was the evacuation at Dunkirk important? <span class="points">[15 pts]</span></div>
+    <div class="question">12. What was the “Final Solution”? <span class="points">[15 pts]</span></div>
+    <div class="question">13. Why did the Allies start by invading North Africa before mainland Europe? <span class="points">[15 pts]</span></div>
+    <div class="question">14. What was Hitler’s last major offensive called? <span class="points">[15 pts]</span></div>
+    <div class="question">15. What was the purpose of the Marshall Plan after the war? <span class="points">[15 pts]</span></div>
+  </div>
+
+  <div class="slide">
+    <h2>Final Showdown – Wager Round</h2>
+    <div class="question">
+      List at least 3 pros and 3 cons Truman might have considered before dropping the atomic bomb. <span class="points">[Wager pts]</span>
+    </div>
+  </div>
+
+  <audio id="ding" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+  <audio id="buzzer" src="https://www.soundjay.com/button/sounds/beep-10.mp3"></audio>
+
+  <script>
+    function playDing() {
+      document.getElementById('ding').play();
+    }
+    function playBuzzer() {
+      document.getElementById('buzzer').play();
+    }
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'd') playDing();
+      if (e.key === 'x') playBuzzer();
+    });
+  </script>
+</body>
+</html>
